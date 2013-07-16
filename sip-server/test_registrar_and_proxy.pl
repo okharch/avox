@@ -12,9 +12,11 @@ use Net::SIP;
 # Because it accepts any registration w/o passwords it's good for testing
 # but don't use it in production
 
-my $ua = Net::SIP::Simple->new( leg => '192.168.154.1:5060' );
+my $server_addr = '192.168.154.128:5060';
+my $ua = Net::SIP::Simple->new( leg => $server_addr );
 $ua->create_chain([
 	$ua->create_registrar,
 	$ua->create_stateless_proxy, 
 ]);
+print "Listen to $server_addr\n";
 $ua->loop;

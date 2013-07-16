@@ -1,0 +1,15 @@
+-- run as postgres
+--
+DROP ROLE IF EXISTS rink_dba, rink, rink_www;
+
+CREATE ROLE rink_dba WITH LOGIN PASSWORD 'md55a72194a1b4602b24b2be0aecb9949c6'; -- K6_6<7.)Y(-xohYy
+CREATE ROLE rink WITH LOGIN PASSWORD 'md56796b3e7e6487f9de6f2cda99a2e78e4'; -- 'X&%<+-6/#[Q~TC;w'
+CREATE ROLE rink_www WITH LOGIN PASSWORD 'md53be464564c776beed3d03ba5540316fb'; -- Q61<jAf7LQj92DMf
+
+DROP DATABASE IF EXISTS rink;
+CREATE DATABASE rink WITH
+  OWNER = rink_dba
+  TEMPLATE = template0
+  ENCODING = 'UTF8'
+  LC_COLLATE = 'C'
+  LC_CTYPE = 'C';

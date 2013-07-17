@@ -1,3 +1,4 @@
+SET client_min_messages TO WARNING;
 --
 -- tariff_plan/tariff_plan_log
 --
@@ -78,7 +79,7 @@ DROP TABLE IF EXISTS tariff_time_log;
 DROP TABLE IF EXISTS tariff_time CASCADE;
 
 CREATE TABLE tariff_time (
-  id serial NOT NULL,
+  id serial NOT NULL primary key,
   tariff_day_id integer NOT NULL REFERENCES tariff_day(id) ON DELETE CASCADE,
 
   date_change timestamp NOT NULL DEFAULT current_timestamp,
@@ -90,7 +91,6 @@ CREATE TABLE tariff_time (
 
 CREATE TABLE tariff_time_log (
   id integer NOT NULL ,
-  tariff_time_id integer NOT NULL REFERENCES tariff_time(id) ON DELETE CASCADE,
 
   tariff_day_id integer NOT NULL REFERENCES tariff_day(id) ON DELETE CASCADE,
 
@@ -110,7 +110,6 @@ DROP TABLE IF EXISTS currency_type CASCADE;
 
 CREATE TABLE currency_type (
   id serial NOT NULL PRIMARY KEY,
-
   name lname,
   short_name sname UNIQUE
 );
@@ -185,7 +184,6 @@ CREATE TABLE accounts (
 -- TODO: .obj_id
 --
 CREATE TABLE accounts_log (
-  id integer NOT NULL,
 
   account_id integer NOT NULL REFERENCES accounts(id) ON DELETE CASCADE,
 
@@ -197,7 +195,7 @@ CREATE TABLE accounts_log (
 
   amount money NOT NULL, -- 10.2 сумма проводки
   balance money NOT NULL, -- 10.2 остаток на счете
-  PRIMARY KEY(id,date_change)
+  PRIMARY KEY(account_id,date_change)
 
 );
 

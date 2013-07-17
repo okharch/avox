@@ -1,3 +1,4 @@
+SET client_min_messages TO WARNING;
 --
 -- problem/problem_log/problem_type/problem_status
 --

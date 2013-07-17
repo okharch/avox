@@ -22,24 +22,24 @@ digraph "twoDegreesRelationshipsDiagram" {
   "accounts":"elipses":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"elipses":w -> "accounts":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "accounts_log":"elipses":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks":"clerk_status_id":w -> "clerk_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks":"clerk_type_id":w -> "clerk_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerk_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerk_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "clients":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients":"client_status_id":w -> "client_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients":"client_type_id":w -> "client_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "clients_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients_log":"elipses":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients_log":"elipses":w -> "client_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients_log":"elipses":w -> "client_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "contracts":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "contracts":"client_id":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts":"contract_status_id":w -> "contract_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts":"service_id":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"elipses":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "contracts_log":"elipses":w -> "contracts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"elipses":w -> "contract_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"elipses":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "currency_rate":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -50,7 +50,6 @@ digraph "twoDegreesRelationshipsDiagram" {
   "problems":"problem_status_id":w -> "problem_status":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"problem_type_id":w -> "problem_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"service_id":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "problems":"tariff_plan_id":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems_log":"clerk_id":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems_log":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems_log":"client_id":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -59,37 +58,37 @@ digraph "twoDegreesRelationshipsDiagram" {
   "problems_log":"problem_status_id":w -> "problem_status":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems_log":"problem_type_id":w -> "problem_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems_log":"service_id":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "problems_log":"tariff_plan_id":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "services":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services":"service_status_id":w -> "service_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "services":"service_type_id":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "services_log":"elipses":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_log":"elipses":w -> "service_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "services_log":"elipses":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_tariff":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "services_tariff":"elipses":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "services_tariff":"elipses":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_tariff_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "services_tariff_log":"elipses":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_tariff_log":"elipses":w -> "services_tariff":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "services_tariff_log":"elipses":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"elipses":w -> "tariff_time":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_day":"elipses":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff_day":"elipses":w -> "tariff_plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day_log":"elipses":w -> "tariff_day":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_day_log":"elipses":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_plan":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff_day_log":"elipses":w -> "tariff_plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff_plan":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_plan_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_plan_log":"elipses":w -> "tariff_plan":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff_plan_log":"elipses":w -> "tariff_plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time":"elipses":w -> "tariff_day":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time_log":"elipses":w -> "tariff_day":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_time_log":"elipses":w -> "tariff_time":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">accounts</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="accounts.html"
     tooltip="accounts"
@@ -99,7 +98,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">accounts_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="accounts_log.html"
     tooltip="accounts_log"
@@ -109,7 +108,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">clerk_status</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="clerk_status.html"
     tooltip="clerk_status"
@@ -119,7 +118,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">clerk_type</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="clerk_type.html"
     tooltip="clerk_type"
@@ -141,7 +140,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
     </TABLE>>
     URL="clerks.html"
     tooltip="clerks"
@@ -151,7 +150,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">clerks_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="clerks_log.html"
     tooltip="clerks_log"
@@ -161,7 +160,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">client_status</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="client_status.html"
     tooltip="client_status"
@@ -171,7 +170,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">client_type</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="client_type.html"
     tooltip="client_type"
@@ -193,7 +192,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="clients.html"
     tooltip="clients"
@@ -203,7 +202,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">clients_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="clients_log.html"
     tooltip="clients_log"
@@ -213,7 +212,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">contract_status</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="contract_status.html"
     tooltip="contract_status"
@@ -231,12 +230,13 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
+      <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
       <TR><TD PORT="percent_limit" COLSPAN="3" ALIGN="LEFT">percent_limit</TD></TR>
       <TR><TD PORT="amount_limit" COLSPAN="3" ALIGN="LEFT">amount_limit</TD></TR>
       <TR><TD PORT="discount" COLSPAN="3" ALIGN="LEFT">discount</TD></TR>
       <TR><TD PORT="percent_discount" COLSPAN="3" ALIGN="LEFT">percent_discount</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="contracts.html"
     tooltip="contracts"
@@ -246,7 +246,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">contracts_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="contracts_log.html"
     tooltip="contracts_log"
@@ -256,7 +256,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">currency_rate</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="currency_rate.html"
     tooltip="currency_rate"
@@ -268,7 +268,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="short_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">short_name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="problem_status.html"
     tooltip="problem_status"
@@ -280,7 +280,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="short_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">short_name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="problem_type.html"
     tooltip="problem_type"
@@ -300,7 +300,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="contract_id" COLSPAN="2" ALIGN="LEFT">contract_id</TD><TD PORT="contract_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="service_id" COLSPAN="2" ALIGN="LEFT">service_id</TD><TD PORT="service_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="description" COLSPAN="2" ALIGN="LEFT">description</TD><TD PORT="description.type" ALIGN="LEFT">varchar[4096]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 8</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 7</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="problems.html"
     tooltip="problems"
@@ -313,7 +313,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="problem_id" COLSPAN="3" ALIGN="LEFT">problem_id</TD></TR>
       <TR><TD PORT="problem_type_id" COLSPAN="3" ALIGN="LEFT">problem_type_id</TD></TR>
       <TR><TD PORT="problem_status_id" COLSPAN="3" ALIGN="LEFT">problem_status_id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
+      <TR><TD PORT="date_change" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">date_change</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
       <TR><TD PORT="client_id" COLSPAN="3" ALIGN="LEFT">client_id</TD></TR>
       <TR><TD PORT="clerk_id" COLSPAN="3" ALIGN="LEFT">clerk_id</TD></TR>
@@ -321,7 +321,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="contract_id" COLSPAN="3" ALIGN="LEFT">contract_id</TD></TR>
       <TR><TD PORT="service_id" COLSPAN="3" ALIGN="LEFT">service_id</TD></TR>
       <TR><TD PORT="description" COLSPAN="3" ALIGN="LEFT">description</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 8</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="problems_log.html"
     tooltip="problems_log"
@@ -331,10 +331,20 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">service_status</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="service_status.html"
     tooltip="service_status"
+  ];
+  "service_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">service_type</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+    </TABLE>>
+    URL="service_type.html"
+    tooltip="service_type"
   ];
   "services" [
     label=<
@@ -349,7 +359,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
       <TR><TD PORT="discount" COLSPAN="3" ALIGN="LEFT">discount</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="services.html"
     tooltip="services"
@@ -359,7 +369,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">services_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="services_log.html"
     tooltip="services_log"
@@ -369,7 +379,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">services_tariff</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="services_tariff.html"
     tooltip="services_tariff"
@@ -379,7 +389,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">services_tariff_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="services_tariff_log.html"
     tooltip="services_tariff_log"
@@ -389,7 +399,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff.html"
     tooltip="tariff"
@@ -399,7 +409,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_day</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_day.html"
     tooltip="tariff_day"
@@ -409,7 +419,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_day_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff_day_log.html"
     tooltip="tariff_day_log"
@@ -418,13 +428,8 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_plan</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
-      <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
-      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
-      <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 &gt;</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_plan.html"
     tooltip="tariff_plan"
@@ -434,7 +439,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_plan_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff_plan_log.html"
     tooltip="tariff_plan_log"
@@ -444,7 +449,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_time</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_time.html"
     tooltip="tariff_time"
@@ -454,7 +459,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_time_log</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff_time_log.html"
     tooltip="tariff_time_log"

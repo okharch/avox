@@ -101,40 +101,46 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>serial</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
+ <td class='detail' align='center' title='Automatically updated by the database'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='right'>nextval('clients_id_seq'::regclass)</td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="accounts.client_id refs clients.id via accounts_client_id_fkey"><a href='accounts.html'>accounts</a><span class='relatedKey'>.client_id</span>
     </td>
     <td class='constraint detail'>accounts_client_id_fkey<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="clients_log.client_id refs clients.id via clients_log_client_id_fkey"><a href='clients_log.html'>clients_log</a><span class='relatedKey'>.client_id</span>
     </td>
     <td class='constraint detail'>clients_log_client_id_fkey<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="contracts.client_id refs clients.id via contracts_client_id_fkey"><a href='contracts.html'>contracts</a><span class='relatedKey'>.client_id</span>
+    </td>
+    <td class='constraint detail'>contracts_client_id_fkey<span title='Cascade on delete:
+ Deletion of parent deletes child'>&nbsp;C</span></td>
+   </tr>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="contracts_log.client_id refs clients.id via contracts_log_client_id_fkey"><a href='contracts_log.html'>contracts_log</a><span class='relatedKey'>.client_id</span>
     </td>
     <td class='constraint detail'>contracts_log_client_id_fkey<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="problems.client_id refs clients.id via problems_client_id_fkey"><a href='problems.html'>problems</a><span class='relatedKey'>.client_id</span>
     </td>
     <td class='constraint detail'>problems_client_id_fkey<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="problems_log.client_id refs clients.id via problems_log_client_id_fkey"><a href='problems_log.html'>problems_log</a><span class='relatedKey'>.client_id</span>
     </td>
     <td class='constraint detail'>problems_log_client_id_fkey<span title='Cascade on delete:
@@ -145,7 +151,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>client_type_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -155,7 +161,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="clients.client_type_id refs client_type.id via clients_client_type_id_fkey"><a href='client_type.html'>client_type</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>clients_client_type_id_fkey<span title='Restrict delete:
@@ -165,7 +171,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>client_status_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -175,7 +181,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="clients.client_status_id refs client_status.id via clients_client_status_id_fkey"><a href='client_status.html'>client_status</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>clients_client_status_id_fkey<span title='Restrict delete:
@@ -185,7 +191,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>date_change</td>
  <td class='detail'>timestamp</td>
  <td class='detail' align='right'>29,6</td>
@@ -196,7 +202,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>clerk_id_change</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -204,18 +210,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>1</td>
  <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="clients.clerk_id_change refs clerks.id via clients_clerk_id_change_fkey"><a href='clerks.html'>clerks</a><span class='relatedKey'>.id</span>
-    </td>
-    <td class='constraint detail'>clients_clerk_id_change_fkey</td>
-   </tr>
-  </table>
- </td>
+ <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>name</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>128</td>
@@ -226,7 +224,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>phones</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>128</td>
@@ -237,7 +235,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>mails</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>64</td>
@@ -248,7 +246,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>address</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>128</td>
@@ -259,7 +257,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>login</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>32</td>
@@ -270,7 +268,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>passwd</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>32</td>
@@ -281,7 +279,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>date_begin</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -292,7 +290,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>date_end</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -304,7 +302,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='13 columns'>Table contained -1 rows at Tue Jul 16 14:18 CEST 2013<p/>
+<p title='13 columns'>Table contained 0 rows at Wed Jul 17 12:29 CEST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -336,48 +334,34 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from clients'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="accounts.html" title="accounts" alt="" coords="496,350,627,543">
-<area shape="rect" id="node3" href="clients.html" title="clients" alt="" coords="188,371,441,728">
-<area shape="rect" id="node5" href="clerks.html" title="clerks" alt="" coords="5,751,144,1103">
-<area shape="rect" id="node7" href="client_status.html" title="client_status" alt="" coords="20,368,129,493">
-<area shape="rect" id="node9" href="client_type.html" title="client_type" alt="" coords="20,124,129,249">
-<area shape="rect" id="node10" href="clients_log.html" title="clients_log" alt="" coords="492,5,631,334">
-<area shape="rect" id="node15" href="contracts_log.html" title="contracts_log" alt="" coords="487,919,636,1339">
-<area shape="rect" id="node18" href="problems.html" title="problems" alt="" coords="487,596,636,903">
-<area shape="rect" id="node22" href="problems_log.html" title="problems_log" alt="" coords="683,887,832,1217">
+<area shape="rect" id="node1" href="accounts.html" title="accounts" alt="" coords="487,350,633,543">
+<area shape="rect" id="node3" href="clients.html" title="clients" alt="" coords="183,480,436,837">
+<area shape="rect" id="node5" href="client_status.html" title="client_status" alt="" coords="5,456,139,581">
+<area shape="rect" id="node7" href="client_type.html" title="client_type" alt="" coords="5,169,139,295">
+<area shape="rect" id="node8" href="clients_log.html" title="clients_log" alt="" coords="484,5,636,334">
+<area shape="rect" id="node12" href="contracts.html" title="contracts" alt="" coords="480,1011,640,1408">
+<area shape="rect" id="node14" href="contracts_log.html" title="contracts_log" alt="" coords="480,596,640,993">
+<area shape="rect" id="node16" href="problems.html" title="problems" alt="" coords="684,773,844,1080">
+<area shape="rect" id="node19" href="problems_log.html" title="problems_log" alt="" coords="888,861,1048,1190">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/clients.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="accounts.html" title="accounts" alt="" coords="652,1941,783,2134">
-<area shape="rect" id="node3" href="clients.html" title="clients" alt="" coords="344,1242,597,1599">
-<area shape="rect" id="node5" href="currency_type.html" title="currency_type" alt="" coords="409,2151,532,2231">
-<area shape="rect" id="node9" href="clerks.html" title="clerks" alt="" coords="161,771,300,1123">
-<area shape="rect" id="node21" href="client_status.html" title="client_status" alt="" coords="176,1496,285,1622">
-<area shape="rect" id="node23" href="client_type.html" title="client_type" alt="" coords="176,1239,285,1364">
-<area shape="rect" id="node6" href="accounts_log.html" title="accounts_log" alt="" coords="855,1555,972,1635">
-<area shape="rect" id="node11" href="clerk_status.html" title="clerk_status" alt="" coords="7,1080,116,1160">
-<area shape="rect" id="node13" href="clerk_type.html" title="clerk_type" alt="" coords="11,856,112,936">
-<area shape="rect" id="node14" href="clerks_log.html" title="clerks_log" alt="" coords="420,1108,521,1188">
-<area shape="rect" id="node24" href="clients_log.html" title="clients_log" alt="" coords="648,1088,787,1417">
-<area shape="rect" id="node29" href="contracts.html" title="contracts" alt="" coords="419,1858,523,1938">
-<area shape="rect" id="node31" href="contract_status.html" title="contract_status" alt="" coords="165,1958,296,2038">
-<area shape="rect" id="node33" href="services.html" title="services" alt="" coords="180,1858,281,1938">
-<area shape="rect" id="node34" href="contracts_log.html" title="contracts_log" alt="" coords="643,1505,792,1925">
-<area shape="rect" id="node40" href="currency_rate.html" title="currency_rate" alt="" coords="656,2151,779,2231">
-<area shape="rect" id="node44" href="problems.html" title="problems" alt="" coords="643,656,792,963">
-<area shape="rect" id="node50" href="problem_status.html" title="problem_status" alt="" coords="405,684,536,764">
-<area shape="rect" id="node52" href="problem_type.html" title="problem_type" alt="" coords="412,586,529,666">
-<area shape="rect" id="node55" href="tariff_plan.html" title="tariff_plan" alt="" coords="419,307,523,387">
-<area shape="rect" id="node56" href="problems_log.html" title="problems_log" alt="" coords="839,825,988,1154">
-<area shape="rect" id="node66" href="services_log.html" title="services_log" alt="" coords="416,1724,525,1804">
-<area shape="rect" id="node69" href="services_tariff.html" title="services_tariff" alt="" coords="656,415,779,495">
-<area shape="rect" id="node72" href="services_tariff_log.html" title="services_tariff_log" alt="" coords="840,415,987,495">
-<area shape="rect" id="node76" href="tariff.html" title="tariff" alt="" coords="1052,516,1137,596">
-<area shape="rect" id="node80" href="tariff_time.html" title="tariff_time" alt="" coords="861,176,965,256">
-<area shape="rect" id="node81" href="tariff_day.html" title="tariff_day" alt="" coords="665,76,769,156">
-<area shape="rect" id="node84" href="tariff_day_log.html" title="tariff_day_log" alt="" coords="855,78,972,158">
-<area shape="rect" id="node89" href="tariff_plan_log.html" title="tariff_plan_log" alt="" coords="656,318,779,398">
-<area shape="rect" id="node94" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="1033,10,1156,90">
+<area shape="rect" id="node1" href="accounts.html" title="accounts" alt="" coords="495,653,641,846">
+<area shape="rect" id="node3" href="clients.html" title="clients" alt="" coords="191,207,444,564">
+<area shape="rect" id="node5" href="currency_type.html" title="currency_type" alt="" coords="247,697,388,777">
+<area shape="rect" id="node11" href="client_status.html" title="client_status" alt="" coords="9,243,143,368">
+<area shape="rect" id="node13" href="client_type.html" title="client_type" alt="" coords="9,76,143,201">
+<area shape="rect" id="node6" href="accounts_log.html" title="accounts_log" alt="" coords="703,1541,841,1621">
+<area shape="rect" id="node9" href="clerks.html" title="clerks" alt="" coords="5,1460,147,1540">
+<area shape="rect" id="node14" href="clients_log.html" title="clients_log" alt="" coords="492,5,644,334">
+<area shape="rect" id="node18" href="contracts.html" title="contracts" alt="" coords="488,1313,648,1711">
+<area shape="rect" id="node22" href="contract_status.html" title="contract_status" alt="" coords="244,1028,391,1108">
+<area shape="rect" id="node24" href="services.html" title="services" alt="" coords="251,1493,384,1573">
+<area shape="rect" id="node25" href="contracts_log.html" title="contracts_log" alt="" coords="488,899,648,1296">
+<area shape="rect" id="node30" href="problems.html" title="problems" alt="" coords="692,639,852,945">
+<area shape="rect" id="node36" href="problem_status.html" title="problem_status" alt="" coords="495,448,641,528">
+<area shape="rect" id="node38" href="problem_type.html" title="problem_type" alt="" coords="499,351,637,431">
+<area shape="rect" id="node40" href="problems_log.html" title="problems_log" alt="" coords="896,781,1056,1110">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/clients.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

@@ -101,35 +101,15 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
- <td class='primaryKey' title='Primary Key'>id</td>
- <td class='detail'>serial</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>nextval('tariff_time_log_id_seq'::regclass)</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
 <tr class='odd'>
- <td class='detail'>tariff_time_id</td>
+ <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='center'></td>
  <td class='detail'></td>
  <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="tariff_time_log.tariff_time_id refs tariff_time.id via tariff_time_log_tariff_time_id_fkey"><a href='tariff_time.html'>tariff_time</a><span class='relatedKey'>.id</span>
-    </td>
-    <td class='constraint detail'>tariff_time_log_tariff_time_id_fkey<span title='Cascade on delete:
- Deletion of parent deletes child'>&nbsp;C</span></td>
-   </tr>
-  </table>
- </td>
+ <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
@@ -153,7 +133,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>date_change</td>
+ <td class='primaryKey' title='Primary Key'>date_change</td>
  <td class='detail'>timestamp</td>
  <td class='detail' align='right'>29,6</td>
  <td class='detail' align='center'></td>
@@ -205,7 +185,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='7 columns'>Table contained -1 rows at Tue Jul 16 14:18 CEST 2013<p/>
+<p title='6 columns'>Table contained 0 rows at Wed Jul 17 12:29 CEST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -220,9 +200,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>id</td>
+  <td class='primaryKey'>id + date_change</td>
   <td class='detail'>Primary key</td>
-  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>tariff_time_log_pkey</td>
  </tr>
 </table>
@@ -231,34 +211,33 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from tariff_time_log'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="tariff_day.html" title="tariff_day" alt="" coords="188,84,327,391">
-<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="5,152,144,504">
-<area shape="rect" id="node4" href="tariff_time.html" title="tariff_time" alt="" coords="371,5,509,198">
-<area shape="rect" id="node7" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="553,136,807,357">
+<area shape="rect" id="node1" href="tariff_day.html" title="tariff_day" alt="" coords="201,5,353,312">
+<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="5,185,157,537">
+<area shape="rect" id="node4" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="397,103,651,302">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/tariff_time_log.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="accounts_log.html" title="accounts_log" alt="" coords="347,103,464,183">
-<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="161,496,300,848">
-<area shape="rect" id="node5" href="clerk_status.html" title="clerk_status" alt="" coords="7,455,116,535">
-<area shape="rect" id="node7" href="clerk_type.html" title="clerk_type" alt="" coords="11,188,112,268">
-<area shape="rect" id="node8" href="clerks_log.html" title="clerks_log" alt="" coords="355,5,456,85">
-<area shape="rect" id="node13" href="clients.html" title="clients" alt="" coords="356,236,455,316">
-<area shape="rect" id="node15" href="clients_log.html" title="clients_log" alt="" coords="529,169,631,249">
-<area shape="rect" id="node18" href="contracts_log.html" title="contracts_log" alt="" coords="521,303,639,383">
-<area shape="rect" id="node21" href="currency_rate.html" title="currency_rate" alt="" coords="344,369,467,449">
-<area shape="rect" id="node23" href="problems.html" title="problems" alt="" coords="528,421,632,501">
-<area shape="rect" id="node28" href="tariff_plan.html" title="tariff_plan" alt="" coords="353,740,457,820">
-<area shape="rect" id="node29" href="problems_log.html" title="problems_log" alt="" coords="708,495,825,575">
-<area shape="rect" id="node35" href="services_log.html" title="services_log" alt="" coords="351,607,460,687">
-<area shape="rect" id="node37" href="services_tariff.html" title="services_tariff" alt="" coords="519,607,641,687">
-<area shape="rect" id="node40" href="services_tariff_log.html" title="services_tariff_log" alt="" coords="693,607,840,687">
-<area shape="rect" id="node44" href="tariff.html" title="tariff" alt="" coords="968,1309,1053,1389">
-<area shape="rect" id="node47" href="tariff_time.html" title="tariff_time" alt="" coords="697,1095,836,1289">
-<area shape="rect" id="node48" href="tariff_day.html" title="tariff_day" alt="" coords="511,945,649,1252">
-<area shape="rect" id="node51" href="tariff_day_log.html" title="tariff_day_log" alt="" coords="708,877,825,957">
-<area shape="rect" id="node56" href="tariff_plan_log.html" title="tariff_plan_log" alt="" coords="519,812,641,892">
-<area shape="rect" id="node61" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="884,1071,1137,1292">
+<area shape="rect" id="node1" href="accounts_log.html" title="accounts_log" alt="" coords="380,103,519,183">
+<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="183,496,335,848">
+<area shape="rect" id="node5" href="clerk_status.html" title="clerk_status" alt="" coords="5,455,139,535">
+<area shape="rect" id="node7" href="clerk_type.html" title="clerk_type" alt="" coords="8,188,136,268">
+<area shape="rect" id="node8" href="clerks_log.html" title="clerks_log" alt="" coords="385,5,513,85">
+<area shape="rect" id="node13" href="contracts.html" title="contracts" alt="" coords="576,139,709,219">
+<area shape="rect" id="node16" href="services.html" title="services" alt="" coords="383,288,516,368">
+<area shape="rect" id="node17" href="contracts_log.html" title="contracts_log" alt="" coords="573,391,712,471">
+<area shape="rect" id="node20" href="currency_rate.html" title="currency_rate" alt="" coords="379,385,520,465">
+<area shape="rect" id="node22" href="problems.html" title="problems" alt="" coords="825,212,959,292">
+<area shape="rect" id="node27" href="problems_log.html" title="problems_log" alt="" coords="1063,292,1201,372">
+<area shape="rect" id="node34" href="services_log.html" title="services_log" alt="" coords="383,571,516,651">
+<area shape="rect" id="node36" href="services_tariff.html" title="services_tariff" alt="" coords="379,668,520,748">
+<area shape="rect" id="node38" href="services_tariff_log.html" title="services_tariff_log" alt="" coords="564,687,721,767">
+<area shape="rect" id="node41" href="tariff.html" title="tariff" alt="" coords="1072,803,1192,883">
+<area shape="rect" id="node44" href="tariff_time.html" title="tariff_time" alt="" coords="825,837,959,917">
+<area shape="rect" id="node45" href="tariff_day.html" title="tariff_day" alt="" coords="567,1007,719,1313">
+<area shape="rect" id="node48" href="tariff_plan.html" title="tariff_plan" alt="" coords="383,932,516,1012">
+<area shape="rect" id="node49" href="tariff_day_log.html" title="tariff_day_log" alt="" coords="823,1005,961,1085">
+<area shape="rect" id="node54" href="tariff_plan_log.html" title="tariff_plan_log" alt="" coords="572,873,713,953">
+<area shape="rect" id="node59" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="765,1182,1019,1381">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/tariff_time_log.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

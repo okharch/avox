@@ -32,7 +32,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="balance" COLSPAN="2" ALIGN="LEFT">balance</TD><TD PORT="balance.type" ALIGN="LEFT">money[2147483647]</TD></TR>
       <TR><TD PORT="amount_reserv" COLSPAN="2" ALIGN="LEFT">amount_reserv</TD><TD PORT="amount_reserv.type" ALIGN="LEFT">money[2147483647]</TD></TR>
       <TR><TD PORT="amount_trust" COLSPAN="2" ALIGN="LEFT">amount_trust</TD><TD PORT="amount_trust.type" ALIGN="LEFT">money[2147483647]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="accounts.html"
     tooltip="accounts"
@@ -41,15 +41,14 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">accounts_log</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="account_id" COLSPAN="3" ALIGN="LEFT">account_id</TD></TR>
+      <TR><TD PORT="account_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">account_id</TD></TR>
       <TR><TD PORT="service_type_id" COLSPAN="3" ALIGN="LEFT">service_type_id</TD></TR>
       <TR><TD PORT="obj_id" COLSPAN="3" ALIGN="LEFT">obj_id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
+      <TR><TD PORT="date_change" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">date_change</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
       <TR><TD PORT="amount" COLSPAN="3" ALIGN="LEFT">amount</TD></TR>
       <TR><TD PORT="balance" COLSPAN="3" ALIGN="LEFT">balance</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="accounts_log.html"
     tooltip="accounts_log"
@@ -71,7 +70,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="clients.html"
     tooltip="clients"
@@ -83,7 +82,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="short_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">short_name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="currency_type.html"
     tooltip="currency_type"

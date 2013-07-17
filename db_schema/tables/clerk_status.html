@@ -106,7 +106,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>serial</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
+ <td class='detail' align='center' title='Automatically updated by the database'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='right'>nextval('clerk_status_id_seq'::regclass)</td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
@@ -129,8 +129,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 <tr class='even'>
  <td class='detail'>name</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>256</td>
+ <td class='detail'>lname</td>
+ <td class='detail' align='right'>2147483647</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -140,27 +140,28 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 <tr class='odd'>
  <td class='indexedColumn' title='Indexed'>short_name</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>128</td>
+ <td class='detail'>sname</td>
+ <td class='detail' align='right'>2147483647</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
+ <td class='detail' align='right'>null</td>
  <td class='detail'></td>
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='3 columns'>Table contained -1 rows at Tue Jul 16 14:18 CEST 2013<p/>
+<p title='3 columns'>Table contained 4 rows at Wed Jul 17 12:29 CEST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
-<table class='dataTable' border='1' rules='groups'><colgroup><colgroup><colgroup><colgroup>
+<table class='dataTable' border='1' rules='groups'><colgroup><colgroup><colgroup><colgroup><colgroup>
 <thead>
  <tr>
   <th>Column(s)</th>
   <th>Type</th>
   <th>Sort</th>
   <th class='constraint' style='text-align:left;'>Constraint Name</th>
+  <th>Anomalies</th>
  </tr>
 </thead>
 <tbody>
@@ -169,12 +170,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>clerk_status_pkey</td>
+  <td>&nbsp;</td>
  </tr>
  <tr>
   <td class='indexedColumn'>short_name</td>
   <td class='detail'>Must be unique</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>clerk_status_short_name_key</td>
+  <td class='detail'>This unique column is also nullable</td>
  </tr>
 </table>
 </div>
@@ -182,33 +185,33 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from clerk_status'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="clerks.html" title="clerks" alt="" coords="249,119,388,471">
-<area shape="rect" id="node3" href="clerk_status.html" title="clerk_status" alt="" coords="7,105,204,236">
-<area shape="rect" id="node4" href="clerks_log.html" title="clerks_log" alt="" coords="432,5,571,379">
+<area shape="rect" id="node1" href="clerks.html" title="clerks" alt="" coords="313,51,465,403">
+<area shape="rect" id="node3" href="clerk_status.html" title="clerk_status" alt="" coords="7,240,268,371">
+<area shape="rect" id="node4" href="clerks_log.html" title="clerks_log" alt="" coords="509,5,661,379">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/clerk_status.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="accounts_log.html" title="accounts_log" alt="" coords="443,396,560,476">
-<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="249,789,388,1141">
-<area shape="rect" id="node5" href="clerk_status.html" title="clerk_status" alt="" coords="7,701,204,832">
-<area shape="rect" id="node7" href="clerk_type.html" title="clerk_type" alt="" coords="55,341,156,421">
-<area shape="rect" id="node8" href="clerks_log.html" title="clerks_log" alt="" coords="432,5,571,379">
-<area shape="rect" id="node13" href="clients.html" title="clients" alt="" coords="452,529,551,609">
-<area shape="rect" id="node15" href="clients_log.html" title="clients_log" alt="" coords="625,463,727,543">
-<area shape="rect" id="node18" href="contracts_log.html" title="contracts_log" alt="" coords="617,596,735,676">
-<area shape="rect" id="node21" href="currency_rate.html" title="currency_rate" alt="" coords="440,663,563,743">
-<area shape="rect" id="node23" href="problems.html" title="problems" alt="" coords="624,715,728,795">
-<area shape="rect" id="node28" href="tariff_plan.html" title="tariff_plan" alt="" coords="449,1033,553,1113">
-<area shape="rect" id="node29" href="problems_log.html" title="problems_log" alt="" coords="796,788,913,868">
-<area shape="rect" id="node35" href="services_log.html" title="services_log" alt="" coords="447,900,556,980">
-<area shape="rect" id="node37" href="services_tariff.html" title="services_tariff" alt="" coords="615,900,737,980">
-<area shape="rect" id="node40" href="services_tariff_log.html" title="services_tariff_log" alt="" coords="781,900,928,980">
-<area shape="rect" id="node44" href="tariff.html" title="tariff" alt="" coords="991,1411,1076,1491">
-<area shape="rect" id="node47" href="tariff_time.html" title="tariff_time" alt="" coords="803,1364,907,1444">
-<area shape="rect" id="node48" href="tariff_day.html" title="tariff_day" alt="" coords="624,1239,728,1319">
-<area shape="rect" id="node51" href="tariff_day_log.html" title="tariff_day_log" alt="" coords="796,1171,913,1251">
-<area shape="rect" id="node56" href="tariff_plan_log.html" title="tariff_plan_log" alt="" coords="615,1105,737,1185">
-<area shape="rect" id="node61" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="972,1296,1095,1376">
+<area shape="rect" id="node1" href="accounts_log.html" title="accounts_log" alt="" coords="516,396,655,476">
+<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="313,692,465,1044">
+<area shape="rect" id="node5" href="clerk_status.html" title="clerk_status" alt="" coords="7,625,268,756">
+<area shape="rect" id="node7" href="clerk_type.html" title="clerk_type" alt="" coords="73,311,201,391">
+<area shape="rect" id="node8" href="clerks_log.html" title="clerks_log" alt="" coords="509,5,661,379">
+<area shape="rect" id="node13" href="contracts.html" title="contracts" alt="" coords="717,647,851,727">
+<area shape="rect" id="node16" href="services.html" title="services" alt="" coords="519,581,652,661">
+<area shape="rect" id="node17" href="contracts_log.html" title="contracts_log" alt="" coords="715,513,853,593">
+<area shape="rect" id="node20" href="currency_rate.html" title="currency_rate" alt="" coords="515,767,656,847">
+<area shape="rect" id="node22" href="problems.html" title="problems" alt="" coords="911,712,1044,792">
+<area shape="rect" id="node27" href="problems_log.html" title="problems_log" alt="" coords="1092,579,1231,659">
+<area shape="rect" id="node34" href="services_log.html" title="services_log" alt="" coords="519,864,652,944">
+<area shape="rect" id="node36" href="services_tariff.html" title="services_tariff" alt="" coords="515,997,656,1077">
+<area shape="rect" id="node38" href="services_tariff_log.html" title="services_tariff_log" alt="" coords="705,964,863,1044">
+<area shape="rect" id="node41" href="tariff.html" title="tariff" alt="" coords="1101,1096,1221,1176">
+<area shape="rect" id="node44" href="tariff_time.html" title="tariff_time" alt="" coords="911,1131,1044,1211">
+<area shape="rect" id="node45" href="tariff_day.html" title="tariff_day" alt="" coords="717,1336,851,1416">
+<area shape="rect" id="node48" href="tariff_plan.html" title="tariff_plan" alt="" coords="519,1261,652,1341">
+<area shape="rect" id="node49" href="tariff_day_log.html" title="tariff_day_log" alt="" coords="908,1268,1047,1348">
+<area shape="rect" id="node54" href="tariff_plan_log.html" title="tariff_plan_log" alt="" coords="713,1203,855,1283">
+<area shape="rect" id="node59" href="tariff_time_log.html" title="tariff_time_log" alt="" coords="907,1383,1048,1463">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/clerk_status.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

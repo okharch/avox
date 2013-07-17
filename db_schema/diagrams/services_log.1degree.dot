@@ -19,9 +19,7 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "services":"service_status_id":w -> "service_status":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_log":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "services_log":"service_id":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_log":"service_status_id":w -> "service_status":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_log":"service_type_id":w -> "service_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks" [
@@ -41,7 +39,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
     </TABLE>>
     URL="clerks.html"
     tooltip="clerks"
@@ -53,7 +51,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="short_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">short_name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="service_status.html"
     tooltip="service_status"
@@ -65,44 +63,25 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="short_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">short_name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="service_type.html"
     tooltip="service_type"
-  ];
-  "services" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">services</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="service_type_id" COLSPAN="3" ALIGN="LEFT">service_type_id</TD></TR>
-      <TR><TD PORT="service_status_id" COLSPAN="3" ALIGN="LEFT">service_status_id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
-      <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
-      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
-      <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD PORT="discount" COLSPAN="3" ALIGN="LEFT">discount</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
-    </TABLE>>
-    URL="services.html"
-    tooltip="services"
   ];
   "services_log" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">services_log</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">serial[10]</TD></TR>
-      <TR><TD PORT="service_id" COLSPAN="2" ALIGN="LEFT">service_id</TD><TD PORT="service_id.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="service_type_id" COLSPAN="2" ALIGN="LEFT">service_type_id</TD><TD PORT="service_type_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="service_status_id" COLSPAN="2" ALIGN="LEFT">service_status_id</TD><TD PORT="service_status_id.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="2" ALIGN="LEFT">date_change</TD><TD PORT="date_change.type" ALIGN="LEFT">timestamp[29,6]</TD></TR>
+      <TR><TD PORT="date_change" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">date_change</TD><TD PORT="date_change.type" ALIGN="LEFT">timestamp[29,6]</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="2" ALIGN="LEFT">clerk_id_change</TD><TD PORT="clerk_id_change.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">bpchar[128]</TD></TR>
+      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">lname[2147483647]</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="2" ALIGN="LEFT">date_begin</TD><TD PORT="date_begin.type" ALIGN="LEFT">date[13]</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="2" ALIGN="LEFT">date_end</TD><TD PORT="date_end.type" ALIGN="LEFT">date[13]</TD></TR>
       <TR><TD PORT="discount" COLSPAN="2" ALIGN="LEFT">discount</TD><TD PORT="discount.type" ALIGN="LEFT">money[2147483647]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
     </TABLE>>
     URL="services_log.html"
     tooltip="services_log"

@@ -29,7 +29,6 @@ digraph "oneDegreeRelationshipsDiagram" {
   "tariff_time":"tariff_day_id":w -> "tariff_day":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time_log":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_time_log":"tariff_day_id":w -> "tariff_day":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff_time_log":"tariff_time_id":w -> "tariff_time":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -47,7 +46,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
     </TABLE>>
     URL="clerks.html"
     tooltip="clerks"
@@ -56,7 +55,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_day</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">serial[10]</TD></TR>
+      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="tariff_plan_id" COLSPAN="2" ALIGN="LEFT">tariff_plan_id</TD><TD PORT="tariff_plan_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="date_change" COLSPAN="2" ALIGN="LEFT">date_change</TD><TD PORT="date_change.type" ALIGN="LEFT">timestamp[29,6]</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="2" ALIGN="LEFT">clerk_id_change</TD><TD PORT="clerk_id_change.type" ALIGN="LEFT">int4[10]</TD></TR>
@@ -67,7 +66,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="fri" COLSPAN="2" ALIGN="LEFT">fri</TD><TD PORT="fri.type" ALIGN="LEFT">bool[1]</TD></TR>
       <TR><TD PORT="dat" COLSPAN="2" ALIGN="LEFT">dat</TD><TD PORT="dat.type" ALIGN="LEFT">bool[1]</TD></TR>
       <TR><TD PORT="sun" COLSPAN="2" ALIGN="LEFT">sun</TD><TD PORT="sun.type" ALIGN="LEFT">bool[1]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_day.html"
     tooltip="tariff_day"
@@ -79,7 +78,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="tariff_day_id" COLSPAN="3" ALIGN="LEFT">tariff_day_id</TD></TR>
       <TR><TD PORT="tariff_plan_id" COLSPAN="3" ALIGN="LEFT">tariff_plan_id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
+      <TR><TD PORT="date_change" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">date_change</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
       <TR><TD PORT="mon" COLSPAN="3" ALIGN="LEFT">mon</TD></TR>
       <TR><TD PORT="tue" COLSPAN="3" ALIGN="LEFT">tue</TD></TR>
@@ -88,7 +87,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="fri" COLSPAN="3" ALIGN="LEFT">fri</TD></TR>
       <TR><TD PORT="dat" COLSPAN="3" ALIGN="LEFT">dat</TD></TR>
       <TR><TD PORT="sun" COLSPAN="3" ALIGN="LEFT">sun</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff_day_log.html"
     tooltip="tariff_day_log"
@@ -100,10 +99,10 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
-      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">name</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_plan.html"
     tooltip="tariff_plan"
@@ -118,7 +117,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
       <TR><TD PORT="time_begin" COLSPAN="3" ALIGN="LEFT">time_begin</TD></TR>
       <TR><TD PORT="time_end" COLSPAN="3" ALIGN="LEFT">time_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tariff_time.html"
     tooltip="tariff_time"
@@ -128,13 +127,12 @@ digraph "oneDegreeRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tariff_time_log</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="tariff_time_id" COLSPAN="3" ALIGN="LEFT">tariff_time_id</TD></TR>
       <TR><TD PORT="tariff_day_id" COLSPAN="3" ALIGN="LEFT">tariff_day_id</TD></TR>
-      <TR><TD PORT="date_change" COLSPAN="3" ALIGN="LEFT">date_change</TD></TR>
+      <TR><TD PORT="date_change" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">date_change</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="3" ALIGN="LEFT">clerk_id_change</TD></TR>
       <TR><TD PORT="time_begin" COLSPAN="3" ALIGN="LEFT">time_begin</TD></TR>
       <TR><TD PORT="time_end" COLSPAN="3" ALIGN="LEFT">time_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tariff_time_log.html"
     tooltip="tariff_time_log"

@@ -106,23 +106,23 @@ CREATE TABLE tariff_time_log (
 -- Currency
 --
 DROP TABLE IF EXISTS currency_rate;
-DROP TABLE IF EXISTS currency_type CASCADE;
+DROP TABLE IF EXISTS currency CASCADE;
 
-CREATE TABLE currency_type (
+CREATE TABLE currency (
   id serial NOT NULL PRIMARY KEY,
   name lname,
   short_name sname UNIQUE
 );
 
-INSERT INTO currency_type (id,name,short_name) VALUES (1,'Ukrainian hryvna','UAH');
-INSERT INTO currency_type (id,name,short_name) VALUES (2,'American dollar','USD');
-INSERT INTO currency_type (id,name,short_name) VALUES (3,'Euro','EUR');
+INSERT INTO currency (id,name,short_name) VALUES (1,'Ukrainian hryvna','UAH');
+INSERT INTO currency (id,name,short_name) VALUES (2,'American dollar','USD');
+INSERT INTO currency (id,name,short_name) VALUES (3,'Euro','EUR');
 
 CREATE TABLE currency_rate (
   id serial NOT NULL PRIMARY KEY,
 
-  curr_id1 integer NOT NULL REFERENCES currency_type(id),
-  curr_id2 integer NOT NULL REFERENCES currency_type(id),
+  curr_id1 integer NOT NULL REFERENCES currency(id),
+  curr_id2 integer NOT NULL REFERENCES currency(id),
 
   clerk_id_change integer NOT NULL DEFAULT 1 REFERENCES clerks(id) ON DELETE SET DEFAULT, -- system
 
@@ -159,7 +159,7 @@ CREATE TABLE tariff (
   date_change timestamp NOT NULL DEFAULT current_timestamp,
   clerk_id_change integer NOT NULL DEFAULT 1 REFERENCES clerks(id) ON DELETE SET DEFAULT, -- system
 
-  curr_id integer NOT NULL REFERENCES currency_type(id),
+  curr_id integer NOT NULL REFERENCES currency(id),
 
   amount money NOT NULL -- 10.2
 );
@@ -174,7 +174,7 @@ CREATE TABLE accounts (
   id serial NOT NULL PRIMARY KEY,
 
   client_id integer NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
-  curr_id integer NOT NULL REFERENCES currency_type(id),
+  curr_id integer NOT NULL REFERENCES currency(id),
 
   balance money NOT NULL DEFAULT 0, -- 10.2
   amount_reserv money NOT NULL DEFAULT 0, -- 10.2

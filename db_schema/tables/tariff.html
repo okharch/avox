@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>serial</td>
  <td class='detail' align='right'>10</td>
@@ -112,7 +112,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>tariff_type_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -122,7 +122,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="tariff.tariff_type_id refs tariff_type.id via tariff_tariff_type_id_fkey"><a href='tariff_type.html'>tariff_type</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>tariff_tariff_type_id_fkey<span title='Cascade on delete:
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>tariff_time_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -142,7 +142,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="tariff.tariff_time_id refs tariff_time.id via tariff_tariff_time_id_fkey"><a href='tariff_time.html'>tariff_time</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>tariff_tariff_time_id_fkey<span title='Cascade on delete:
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>date_change</td>
  <td class='detail'>timestamp</td>
  <td class='detail' align='right'>29,6</td>
@@ -163,7 +163,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>clerk_id_change</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -173,7 +173,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="tariff.clerk_id_change refs clerks.id via tariff_clerk_id_change_fkey"><a href='clerks.html'>clerks</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>tariff_clerk_id_change_fkey</td>
@@ -182,7 +182,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>curr_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -192,8 +192,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="tariff.curr_id refs currency_type.id via tariff_curr_id_fkey"><a href='currency_type.html'>currency_type</a><span class='relatedKey'>.id</span>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="tariff.curr_id refs currency.id via tariff_curr_id_fkey"><a href='currency.html'>currency</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>tariff_curr_id_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -202,7 +202,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>amount</td>
  <td class='detail'>money</td>
  <td class='detail' align='right'>2147483647</td>
@@ -214,7 +214,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='7 columns'>Table contained 0 rows at Fri Jul 19 07:14 CEST 2013<p/>
+<p title='7 columns'>Table contained 0 rows at Fri Jul 19 08:39 CEST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -242,7 +242,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="tariff.html" title="tariff" alt="" coords="397,167,680,388">
 <area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="5,272,157,624">
-<area shape="rect" id="node5" href="currency_type.html" title="currency_type" alt="" coords="207,393,348,519">
+<area shape="rect" id="node5" href="currency.html" title="currency" alt="" coords="211,393,344,519">
 <area shape="rect" id="node7" href="tariff_time.html" title="tariff_time" alt="" coords="201,147,353,341">
 <area shape="rect" id="node9" href="tariff_type.html" title="tariff_type" alt="" coords="211,5,344,131">
 </map>
@@ -250,7 +250,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
 <area shape="rect" id="node1" href="accounts.html" title="accounts" alt="" coords="576,324,709,404">
 <area shape="rect" id="node3" href="clients.html" title="clients" alt="" coords="383,395,516,475">
-<area shape="rect" id="node5" href="currency_type.html" title="currency_type" alt="" coords="379,713,520,839">
+<area shape="rect" id="node5" href="currency.html" title="currency" alt="" coords="383,713,516,839">
 <area shape="rect" id="node9" href="clerks.html" title="clerks" alt="" coords="183,603,335,955">
 <area shape="rect" id="node6" href="accounts_log.html" title="accounts_log" alt="" coords="772,155,911,235">
 <area shape="rect" id="node11" href="clerk_status.html" title="clerk_status" alt="" coords="5,543,139,623">

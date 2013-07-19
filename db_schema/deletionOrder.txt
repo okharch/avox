@@ -20,8 +20,8 @@ contracts
 tariff_day
 tariff_plan
 services
-clerks
 clients
+clerks
 tariff_type
 sysmsg_type
 service_status

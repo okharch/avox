@@ -10,8 +10,8 @@ problem_type
 service_status
 sysmsg_type
 tariff_type
-clients
 clerks
+clients
 services
 tariff_plan
 tariff_day

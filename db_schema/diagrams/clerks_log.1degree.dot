@@ -66,7 +66,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">24 &gt;</TD></TR>
     </TABLE>>
     URL="clerks.html"
     tooltip="clerks"
@@ -81,12 +81,12 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="clerk_type_id" COLSPAN="2" ALIGN="LEFT">clerk_type_id</TD><TD PORT="clerk_type_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="clerk_status_id" COLSPAN="2" ALIGN="LEFT">clerk_status_id</TD><TD PORT="clerk_status_id.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="clerk_id_change" COLSPAN="2" ALIGN="LEFT">clerk_id_change</TD><TD PORT="clerk_id_change.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">bpchar[128]</TD></TR>
-      <TR><TD PORT="first_name" COLSPAN="2" ALIGN="LEFT">first_name</TD><TD PORT="first_name.type" ALIGN="LEFT">bpchar[128]</TD></TR>
-      <TR><TD PORT="last_name" COLSPAN="2" ALIGN="LEFT">last_name</TD><TD PORT="last_name.type" ALIGN="LEFT">bpchar[128]</TD></TR>
-      <TR><TD PORT="phones" COLSPAN="2" ALIGN="LEFT">phones</TD><TD PORT="phones.type" ALIGN="LEFT">bpchar[128]</TD></TR>
-      <TR><TD PORT="mails" COLSPAN="2" ALIGN="LEFT">mails</TD><TD PORT="mails.type" ALIGN="LEFT">bpchar[64]</TD></TR>
-      <TR><TD PORT="address" COLSPAN="2" ALIGN="LEFT">address</TD><TD PORT="address.type" ALIGN="LEFT">bpchar[128]</TD></TR>
+      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">string[2147483647]</TD></TR>
+      <TR><TD PORT="first_name" COLSPAN="2" ALIGN="LEFT">first_name</TD><TD PORT="first_name.type" ALIGN="LEFT">sname[2147483647]</TD></TR>
+      <TR><TD PORT="last_name" COLSPAN="2" ALIGN="LEFT">last_name</TD><TD PORT="last_name.type" ALIGN="LEFT">sname[2147483647]</TD></TR>
+      <TR><TD PORT="phones" COLSPAN="2" ALIGN="LEFT">phones</TD><TD PORT="phones.type" ALIGN="LEFT">string[2147483647]</TD></TR>
+      <TR><TD PORT="mails" COLSPAN="2" ALIGN="LEFT">mails</TD><TD PORT="mails.type" ALIGN="LEFT">string[2147483647]</TD></TR>
+      <TR><TD PORT="address" COLSPAN="2" ALIGN="LEFT">address</TD><TD PORT="address.type" ALIGN="LEFT">string[2147483647]</TD></TR>
       <TR><TD PORT="login" COLSPAN="2" ALIGN="LEFT">login</TD><TD PORT="login.type" ALIGN="LEFT">login_t[2147483647]</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="2" ALIGN="LEFT">passwd</TD><TD PORT="passwd.type" ALIGN="LEFT">bpchar[32]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>

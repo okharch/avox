@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>serial</td>
  <td class='detail' align='right'>10</td>
@@ -110,13 +110,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail' align='right'>nextval('problem_type_id_seq'::regclass)</td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="problems.problem_type_id refs problem_type.id via problems_problem_type_id_fkey"><a href='problems.html'>problems</a><span class='relatedKey'>.problem_type_id</span>
     </td>
     <td class='constraint detail'>problems_problem_type_id_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="problems_log.problem_type_id refs problem_type.id via problems_log_problem_type_id_fkey"><a href='problems_log.html'>problems_log</a><span class='relatedKey'>.problem_type_id</span>
     </td>
     <td class='constraint detail'>problems_log_problem_type_id_fkey<span title='Restrict delete:
@@ -127,7 +127,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>name</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>256</td>
@@ -138,7 +138,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>short_name</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>128</td>
@@ -150,7 +150,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='3 columns'>Table contained 3 rows at Wed Jul 17 12:29 CEST 2013<p/>
+<p title='3 columns'>Table contained 3 rows at Fri Jul 19 07:14 CEST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -188,14 +188,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/problem_type.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="contracts.html" title="contracts" alt="" coords="405,395,539,475">
-<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="5,428,147,508">
-<area shape="rect" id="node5" href="clients.html" title="clients" alt="" coords="191,327,324,407">
-<area shape="rect" id="node7" href="services.html" title="services" alt="" coords="191,461,324,541">
-<area shape="rect" id="node8" href="problems.html" title="problems" alt="" coords="620,125,780,432">
-<area shape="rect" id="node14" href="problem_status.html" title="problem_status" alt="" coords="399,153,545,233">
-<area shape="rect" id="node16" href="problem_type.html" title="problem_type" alt="" coords="368,5,576,136">
-<area shape="rect" id="node18" href="problems_log.html" title="problems_log" alt="" coords="824,283,984,613">
+<area shape="rect" id="node1" href="clients.html" title="clients" alt="" coords="191,327,324,407">
+<area shape="rect" id="node3" href="clerks.html" title="clerks" alt="" coords="5,392,147,472">
+<area shape="rect" id="node4" href="contracts.html" title="contracts" alt="" coords="405,395,539,475">
+<area shape="rect" id="node8" href="services.html" title="services" alt="" coords="191,460,324,540">
+<area shape="rect" id="node9" href="problems.html" title="problems" alt="" coords="620,125,780,432">
+<area shape="rect" id="node15" href="problem_status.html" title="problem_status" alt="" coords="399,153,545,233">
+<area shape="rect" id="node17" href="problem_type.html" title="problem_type" alt="" coords="368,5,576,136">
+<area shape="rect" id="node19" href="problems_log.html" title="problems_log" alt="" coords="824,283,984,613">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/problem_type.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

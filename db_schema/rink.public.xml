@@ -55,7 +55,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="clerk_type" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="clerk_type" numRows="4" remarks="This is reference table for clerk_id value. clerk_id =&gt; name" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clerk_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="clerk_type_id" foreignKey="clerks_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
             <child column="clerk_type_id" foreignKey="clerks_log_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks_log"/>
@@ -76,6 +76,8 @@
             <child column="clerk_id_change" foreignKey="clerks_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
             <child column="clerk_id" foreignKey="clerks_log_clerk_id_fkey" implied="false" onDeleteCascade="true" table="clerks_log"/>
             <child column="clerk_id_change" foreignKey="clerks_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks_log"/>
+            <child column="clerk_id_change" foreignKey="clients_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clients"/>
+            <child column="clerk_id_change" foreignKey="clients_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
             <child column="clerk_id_change" foreignKey="contracts_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="contracts"/>
             <child column="clerk_id_change" foreignKey="contracts_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="contracts_log"/>
             <child column="clerk_id_change" foreignKey="currency_rate_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
@@ -136,12 +138,12 @@
          <column autoUpdated="false" defaultValue="1" digits="0" id="5" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="clerks_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
          </column>
-         <column autoUpdated="false" digits="0" id="6" name="name" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="7" name="first_name" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="8" name="last_name" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="9" name="phones" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="10" name="mails" nullable="true" remarks="" size="64" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="11" name="address" nullable="true" remarks="" size="128" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="name" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="7" name="first_name" nullable="true" remarks="" size="2147483647" type="sname"/>
+         <column autoUpdated="false" digits="0" id="8" name="last_name" nullable="true" remarks="" size="2147483647" type="sname"/>
+         <column autoUpdated="false" digits="0" id="9" name="phones" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="10" name="mails" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="11" name="address" nullable="true" remarks="" size="2147483647" type="string"/>
          <column autoUpdated="false" digits="0" id="12" name="login" nullable="true" remarks="" size="2147483647" type="login_t"/>
          <column autoUpdated="false" digits="0" id="13" name="passwd" nullable="false" remarks="" size="32" type="bpchar"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
@@ -151,12 +153,12 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="client_status" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="client_status" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('client_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_status_id" foreignKey="clients_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients"/>
             <child column="client_status_id" foreignKey="clients_log_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="256" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="long_name"/>
          <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="false" remarks="" size="128" type="bpchar"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="client_status_pkey" unique="true">
@@ -166,13 +168,13 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="client_type" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="client_type" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('client_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_type_id" foreignKey="clients_client_type_id_fkey" implied="false" onDeleteCascade="false" table="clients"/>
             <child column="client_type_id" foreignKey="clients_log_client_type_id_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="256" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="false" remarks="" size="128" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
+         <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="false" remarks="" size="2147483647" type="sname"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="client_type_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -184,7 +186,6 @@
       <table name="clients" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clients_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_id" foreignKey="accounts_client_id_fkey" implied="false" onDeleteCascade="true" table="accounts"/>
-            <child column="client_id" foreignKey="clients_log_client_id_fkey" implied="false" onDeleteCascade="true" table="clients_log"/>
             <child column="client_id" foreignKey="contracts_client_id_fkey" implied="false" onDeleteCascade="true" table="contracts"/>
             <child column="client_id" foreignKey="contracts_log_client_id_fkey" implied="false" onDeleteCascade="true" table="contracts_log"/>
             <child column="client_id" foreignKey="problems_client_id_fkey" implied="false" onDeleteCascade="true" table="problems"/>
@@ -197,12 +198,14 @@
             <parent column="id" foreignKey="clients_client_status_id_fkey" implied="false" onDeleteCascade="false" table="client_status"/>
          </column>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="date_change" nullable="false" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" defaultValue="1" digits="0" id="4" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4"/>
-         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="6" name="phones" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="7" name="mails" nullable="true" remarks="" size="64" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="8" name="address" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="9" name="login" nullable="false" remarks="" size="32" type="bpchar"/>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="4" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="clients_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
+         <column autoUpdated="false" digits="0" id="6" name="phones" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="7" name="mails" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="8" name="address" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="9" name="login" nullable="true" remarks="" size="2147483647" type="login_t"/>
          <column autoUpdated="false" digits="0" id="10" name="passwd" nullable="false" remarks="" size="32" type="bpchar"/>
          <column autoUpdated="false" defaultValue="('now'::text)::date" digits="0" id="11" name="date_begin" nullable="false" remarks="" size="13" type="date"/>
          <column autoUpdated="false" digits="0" id="12" name="date_end" nullable="true" remarks="" size="13" type="date"/>
@@ -210,32 +213,32 @@
          <index name="clients_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="clients_login_key" unique="true">
-            <column ascending="true" name="login"/>
-         </index>
       </table>
       <table name="clients_log" numRows="0" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('clients_log_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
-         <column autoUpdated="false" digits="0" id="1" name="client_id" nullable="false" remarks="" size="10" type="int4">
-            <parent column="id" foreignKey="clients_log_client_id_fkey" implied="false" onDeleteCascade="true" table="clients"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="2" name="client_type_id" nullable="false" remarks="" size="10" type="int4">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="client_type_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="clients_log_client_type_id_fkey" implied="false" onDeleteCascade="false" table="client_type"/>
          </column>
-         <column autoUpdated="false" digits="0" id="3" name="client_status_id" nullable="false" remarks="" size="10" type="int4">
+         <column autoUpdated="false" digits="0" id="2" name="client_status_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="clients_log_client_status_id_fkey" implied="false" onDeleteCascade="false" table="client_status"/>
          </column>
-         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="date_change" nullable="false" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" defaultValue="1" digits="0" id="5" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4"/>
-         <column autoUpdated="false" digits="0" id="6" name="name" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="7" name="phones" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="8" name="mails" nullable="true" remarks="" size="64" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="9" name="address" nullable="true" remarks="" size="128" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="10" name="login" nullable="true" remarks="" size="32" type="bpchar"/>
-         <column autoUpdated="false" digits="0" id="11" name="passwd" nullable="true" remarks="" size="32" type="bpchar"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="date_change" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="4" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="clients_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
+         <column autoUpdated="false" digits="0" id="6" name="phones" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="7" name="mails" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="8" name="address" nullable="true" remarks="" size="2147483647" type="string"/>
+         <column autoUpdated="false" digits="0" id="9" name="login" nullable="true" remarks="" size="2147483647" type="login_t"/>
+         <column autoUpdated="false" digits="0" id="10" name="passwd" nullable="false" remarks="" size="32" type="bpchar"/>
+         <column autoUpdated="false" defaultValue="('now'::text)::date" digits="0" id="11" name="date_begin" nullable="false" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="12" name="date_end" nullable="true" remarks="" size="13" type="date"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
+         <primaryKey column="date_change" sequenceNumberInPK="2"/>
          <index name="clients_log_pkey" unique="true">
             <column ascending="true" name="id"/>
+            <column ascending="true" name="date_change"/>
          </index>
       </table>
       <table name="contract_status" numRows="4" remarks="" schema="public" type="TABLE">

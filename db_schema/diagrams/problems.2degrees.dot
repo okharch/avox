@@ -29,9 +29,10 @@ digraph "twoDegreesRelationshipsDiagram" {
   "clerks_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerk_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks_log":"elipses":w -> "clerk_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "clients":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients":"client_status_id":w -> "client_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients":"client_type_id":w -> "client_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "clients_log":"elipses":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "clients_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients_log":"elipses":w -> "client_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "clients_log":"elipses":w -> "client_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -140,7 +141,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">22 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">24 &gt;</TD></TR>
     </TABLE>>
     URL="clerks.html"
     tooltip="clerks"
@@ -160,7 +161,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">client_status</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="client_status.html"
     tooltip="client_status"
@@ -170,7 +171,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">client_type</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="client_type.html"
     tooltip="client_type"
@@ -188,11 +189,11 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="phones" COLSPAN="3" ALIGN="LEFT">phones</TD></TR>
       <TR><TD PORT="mails" COLSPAN="3" ALIGN="LEFT">mails</TD></TR>
       <TR><TD PORT="address" COLSPAN="3" ALIGN="LEFT">address</TD></TR>
-      <TR><TD PORT="login" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">login</TD></TR>
+      <TR><TD PORT="login" COLSPAN="3" ALIGN="LEFT">login</TD></TR>
       <TR><TD PORT="passwd" COLSPAN="3" ALIGN="LEFT">passwd</TD></TR>
       <TR><TD PORT="date_begin" COLSPAN="3" ALIGN="LEFT">date_begin</TD></TR>
       <TR><TD PORT="date_end" COLSPAN="3" ALIGN="LEFT">date_end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="clients.html"
     tooltip="clients"

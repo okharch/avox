@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="rink" schema="public" type="PostgreSQL - 9.2.4">
+<database name="avox" schema="public" type="PostgreSQL - 9.2.4">
    <tables>
       <table name="accounts" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('accounts_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
@@ -9,7 +9,7 @@
             <parent column="id" foreignKey="accounts_client_id_fkey" implied="false" onDeleteCascade="true" table="clients"/>
          </column>
          <column autoUpdated="false" digits="0" id="2" name="curr_id" nullable="false" remarks="" size="10" type="int4">
-            <parent column="id" foreignKey="accounts_curr_id_fkey" implied="false" onDeleteCascade="false" table="currency_type"/>
+            <parent column="id" foreignKey="accounts_curr_id_fkey" implied="false" onDeleteCascade="false" table="currency"/>
          </column>
          <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="balance" nullable="false" remarks="" size="2147483647" type="money"/>
          <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="amount_reserv" nullable="false" remarks="" size="2147483647" type="money"/>
@@ -55,7 +55,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="clerk_type" numRows="4" remarks="This is reference table for clerk_id value. clerk_id =&gt; name" schema="public" type="TABLE">
+      <table name="clerk_type" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clerk_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="clerk_type_id" foreignKey="clerks_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
             <child column="clerk_type_id" foreignKey="clerks_log_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks_log"/>
@@ -158,7 +158,7 @@
             <child column="client_status_id" foreignKey="clients_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients"/>
             <child column="client_status_id" foreignKey="clients_log_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="long_name"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
          <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="false" remarks="" size="128" type="bpchar"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="client_status_pkey" unique="true">
@@ -322,13 +322,30 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
+      <table name="currency" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('currency_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="curr_id" foreignKey="accounts_curr_id_fkey" implied="false" onDeleteCascade="false" table="accounts"/>
+            <child column="curr_id1" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
+            <child column="curr_id2" foreignKey="currency_rate_curr_id2_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
+            <child column="curr_id" foreignKey="tariff_curr_id_fkey" implied="false" onDeleteCascade="false" table="tariff"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
+         <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="true" remarks="" size="2147483647" type="sname"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="currency_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="currency_short_name_key" unique="true">
+            <column ascending="true" name="short_name"/>
+         </index>
+      </table>
       <table name="currency_rate" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('currency_rate_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
          <column autoUpdated="false" digits="0" id="1" name="curr_id1" nullable="false" remarks="" size="10" type="int4">
-            <parent column="id" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency_type"/>
+            <parent column="id" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency"/>
          </column>
          <column autoUpdated="false" digits="0" id="2" name="curr_id2" nullable="false" remarks="" size="10" type="int4">
-            <parent column="id" foreignKey="currency_rate_curr_id2_fkey" implied="false" onDeleteCascade="false" table="currency_type"/>
+            <parent column="id" foreignKey="currency_rate_curr_id2_fkey" implied="false" onDeleteCascade="false" table="currency"/>
          </column>
          <column autoUpdated="false" defaultValue="1" digits="0" id="3" name="clerk_id_change" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="currency_rate_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
@@ -338,23 +355,6 @@
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="currency_rate_pkey" unique="true">
             <column ascending="true" name="id"/>
-         </index>
-      </table>
-      <table name="currency_type" numRows="3" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('currency_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
-            <child column="curr_id" foreignKey="accounts_curr_id_fkey" implied="false" onDeleteCascade="false" table="accounts"/>
-            <child column="curr_id1" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
-            <child column="curr_id2" foreignKey="currency_rate_curr_id2_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
-            <child column="curr_id" foreignKey="tariff_curr_id_fkey" implied="false" onDeleteCascade="false" table="tariff"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="2147483647" type="lname"/>
-         <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="true" remarks="" size="2147483647" type="sname"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="currency_type_pkey" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-         <index name="currency_type_short_name_key" unique="true">
-            <column ascending="true" name="short_name"/>
          </index>
       </table>
       <table name="msg_type" numRows="2" remarks="" schema="public" type="TABLE">
@@ -631,7 +631,7 @@
             <parent column="id" foreignKey="tariff_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
          </column>
          <column autoUpdated="false" digits="0" id="5" name="curr_id" nullable="false" remarks="" size="10" type="int4">
-            <parent column="id" foreignKey="tariff_curr_id_fkey" implied="false" onDeleteCascade="false" table="currency_type"/>
+            <parent column="id" foreignKey="tariff_curr_id_fkey" implied="false" onDeleteCascade="false" table="currency"/>
          </column>
          <column autoUpdated="false" digits="0" id="6" name="amount" nullable="false" remarks="" size="2147483647" type="money"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>

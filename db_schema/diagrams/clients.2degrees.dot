@@ -20,7 +20,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "accounts":"client_id":w -> "clients":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "accounts":"curr_id":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "accounts":"curr_id":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"elipses":w -> "accounts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "clerks":"clerk_status_id":w -> "clerk_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -44,8 +44,8 @@ digraph "twoDegreesRelationshipsDiagram" {
   "contracts_log":"contract_status_id":w -> "contract_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"service_id":w -> "services":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "currency_rate":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "currency_rate":"elipses":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "currency_rate":"elipses":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "currency_rate":"elipses":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "currency_rate":"elipses":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"clerk_id":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"clerk_id_change":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"client_id":w -> "clients":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -67,7 +67,7 @@ digraph "twoDegreesRelationshipsDiagram" {
   "services_tariff_log":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_tariff_log":"elipses":w -> "services_tariff":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff":"elipses":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff":"elipses":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"elipses":w -> "tariff_time":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day":"elipses":w -> "clerks":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day":"elipses":w -> "tariff_plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -272,6 +272,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="contracts_log.html"
     tooltip="contracts_log"
   ];
+  "currency" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">currency</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="currency.html"
+    tooltip="currency"
+  ];
   "currency_rate" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -281,16 +291,6 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="currency_rate.html"
     tooltip="currency_rate"
-  ];
-  "currency_type" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">currency_type</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
-    </TABLE>>
-    URL="currency_type.html"
-    tooltip="currency_type"
   ];
   "problem_status" [
     label=<

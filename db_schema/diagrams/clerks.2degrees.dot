@@ -20,7 +20,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "accounts":"elipses":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "accounts":"elipses":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "accounts":"elipses":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"account_id":w -> "accounts":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"clerk_id_change":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "accounts_log":"service_type_id":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -46,8 +46,8 @@ digraph "twoDegreesRelationshipsDiagram" {
   "contracts_log":"contract_status_id":w -> "contract_status":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "contracts_log":"service_id":w -> "services":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "currency_rate":"clerk_id_change":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "currency_rate":"curr_id1":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "currency_rate":"curr_id2":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "currency_rate":"curr_id1":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "currency_rate":"curr_id2":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"clerk_id":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"clerk_id_change":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "problems":"client_id":w -> "clients":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -75,7 +75,7 @@ digraph "twoDegreesRelationshipsDiagram" {
   "services_tariff_log":"service_type_id":w -> "service_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "services_tariff_log":"services_tariff_id":w -> "services_tariff":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"clerk_id_change":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tariff":"curr_id":w -> "currency_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tariff":"curr_id":w -> "currency":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"tariff_time_id":w -> "tariff_time":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff":"tariff_type_id":w -> "tariff_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "tariff_day":"clerk_id_change":w -> "clerks":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -307,6 +307,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="contracts_log.html"
     tooltip="contracts_log"
   ];
+  "currency" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">currency</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="currency.html"
+    tooltip="currency"
+  ];
   "currency_rate" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -321,16 +331,6 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="currency_rate.html"
     tooltip="currency_rate"
-  ];
-  "currency_type" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">currency_type</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
-    </TABLE>>
-    URL="currency_type.html"
-    tooltip="currency_type"
   ];
   "problem_status" [
     label=<

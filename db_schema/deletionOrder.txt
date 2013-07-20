@@ -32,5 +32,5 @@ client_type
 client_status
 clerk_type
 clerk_status
-currency_type
+currency
 service_type

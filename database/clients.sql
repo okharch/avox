@@ -20,7 +20,7 @@ INSERT INTO client_type (id,name,short_name) VALUES (2,'employee','employee');
 CREATE TABLE client_status (
   id serial NOT NULL PRIMARY KEY,
 
-  name long_name,
+  name lname,
   short_name char(128) NOT NULL UNIQUE
 );
 

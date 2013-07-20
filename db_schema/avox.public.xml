@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <database name="avox" schema="public" type="PostgreSQL - 9.2.4">
    <tables>
-      <table name="accounts" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="accounts" numRows="0" remarks="Accounts of clients" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('accounts_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="account_id" foreignKey="accounts_log_account_id_fkey" implied="false" onDeleteCascade="true" table="accounts_log"/>
          </column>
@@ -19,7 +19,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="accounts_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="accounts_log" numRows="0" remarks="Logging changes of accounts. Structure is the same but add date_change to primary key" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="account_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="accounts_log_account_id_fkey" implied="false" onDeleteCascade="true" table="accounts"/>
          </column>
@@ -40,7 +40,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="clerk_status" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="clerk_status" numRows="4" remarks="Reference for clerk_status_id. clerk_status is the status of record in clerk_record: created/active/blocked/closed" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clerk_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="clerk_status_id" foreignKey="clerks_clerk_status_id_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
             <child column="clerk_status_id" foreignKey="clerks_log_clerk_status_id_fkey" implied="false" onDeleteCascade="false" table="clerks_log"/>
@@ -55,7 +55,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="clerk_type" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="clerk_type" numRows="4" remarks="Reference for clerk_type_id. type is analog to group for giving permission to use admin GUI" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clerk_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="clerk_type_id" foreignKey="clerks_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
             <child column="clerk_type_id" foreignKey="clerks_log_clerk_type_id_fkey" implied="false" onDeleteCascade="false" table="clerks_log"/>
@@ -70,7 +70,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="clerks" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="clerks" numRows="0" remarks="Records on who can access admin GUI" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clerks_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="clerk_id_change" foreignKey="accounts_log_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="accounts_log"/>
             <child column="clerk_id_change" foreignKey="clerks_clerk_id_change_fkey" implied="false" onDeleteCascade="false" table="clerks"/>
@@ -123,7 +123,7 @@
             <column ascending="true" name="login"/>
          </index>
       </table>
-      <table name="clerks_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="clerks_log" numRows="0" remarks="Logging changes on clerks table" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="1" name="date_change" nullable="false" remarks="" size="29" type="timestamp"/>
          <column autoUpdated="false" digits="0" id="2" name="clerk_id" nullable="false" remarks="" size="10" type="int4">
@@ -153,7 +153,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="client_status" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="client_status" numRows="4" remarks="Reference for client_status_id. client_status is the status of record in client_record: created/active/blocked/closed" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('client_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_status_id" foreignKey="clients_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients"/>
             <child column="client_status_id" foreignKey="clients_log_client_status_id_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
@@ -168,7 +168,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="client_type" numRows="2" remarks="" schema="public" type="TABLE">
+      <table name="client_type" numRows="2" remarks="Reference for client_type_id - which type of services client can use" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('client_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_type_id" foreignKey="clients_client_type_id_fkey" implied="false" onDeleteCascade="false" table="clients"/>
             <child column="client_type_id" foreignKey="clients_log_client_type_id_fkey" implied="false" onDeleteCascade="false" table="clients_log"/>
@@ -183,7 +183,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="clients" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="clients" numRows="0" remarks="Records on clients who receives some kind of services and pays money for it" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('clients_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="client_id" foreignKey="accounts_client_id_fkey" implied="false" onDeleteCascade="true" table="accounts"/>
             <child column="client_id" foreignKey="contracts_client_id_fkey" implied="false" onDeleteCascade="true" table="contracts"/>
@@ -214,7 +214,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="clients_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="clients_log" numRows="0" remarks="Logging changes on clients table" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="client_type_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="clients_log_client_type_id_fkey" implied="false" onDeleteCascade="false" table="client_type"/>
@@ -241,7 +241,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="contract_status" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="contract_status" numRows="4" remarks="Reference for contract_status_id. contract_status is the status of record in contracts: created/active/blocked/closed" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('contract_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="contract_status_id" foreignKey="contracts_contract_status_id_fkey" implied="false" onDeleteCascade="true" table="contracts"/>
             <child column="contract_status_id" foreignKey="contracts_log_contract_status_id_fkey" implied="false" onDeleteCascade="true" table="contracts_log"/>
@@ -256,7 +256,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="contracts" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="contracts" numRows="0" remarks="contracts between client and system" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('contracts_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="contract_id" foreignKey="problems_contract_id_fkey" implied="false" onDeleteCascade="true" table="problems"/>
             <child column="contract_id" foreignKey="problems_log_contract_id_fkey" implied="false" onDeleteCascade="true" table="problems_log"/>
@@ -291,7 +291,7 @@
             <column ascending="true" name="login"/>
          </index>
       </table>
-      <table name="contracts_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="contracts_log" numRows="0" remarks="Logging changes on contracts records" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="contract_status_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="contracts_log_contract_status_id_fkey" implied="false" onDeleteCascade="true" table="contract_status"/>
@@ -322,7 +322,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="currency" numRows="3" remarks="" schema="public" type="TABLE">
+      <table name="currency" numRows="3" remarks="List of currencies and their codes" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('currency_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="curr_id" foreignKey="accounts_curr_id_fkey" implied="false" onDeleteCascade="false" table="accounts"/>
             <child column="curr_id1" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency_rate"/>
@@ -339,7 +339,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="currency_rate" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="currency_rate" numRows="0" remarks="Historical records on exchange rate for each operational day" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('currency_rate_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
          <column autoUpdated="false" digits="0" id="1" name="curr_id1" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="currency_rate_curr_id1_fkey" implied="false" onDeleteCascade="false" table="currency"/>
@@ -357,7 +357,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="msg_type" numRows="2" remarks="" schema="public" type="TABLE">
+      <table name="msg_type" numRows="2" remarks="Message codes" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('msg_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
          <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="256" type="bpchar"/>
          <column autoUpdated="false" digits="0" id="2" name="short_name" nullable="false" remarks="" size="128" type="bpchar"/>
@@ -369,7 +369,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="problem_status" numRows="3" remarks="" schema="public" type="TABLE">
+      <table name="problem_status" numRows="3" remarks="Reference for status of problem problem_status_id" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('problem_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="problem_status_id" foreignKey="problems_problem_status_id_fkey" implied="false" onDeleteCascade="false" table="problems"/>
             <child column="problem_status_id" foreignKey="problems_log_problem_status_id_fkey" implied="false" onDeleteCascade="false" table="problems_log"/>
@@ -384,7 +384,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="problem_type" numRows="3" remarks="" schema="public" type="TABLE">
+      <table name="problem_type" numRows="3" remarks="Reference on problem type: warning/critical/fatal/etc" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('problem_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="problem_type_id" foreignKey="problems_problem_type_id_fkey" implied="false" onDeleteCascade="false" table="problems"/>
             <child column="problem_type_id" foreignKey="problems_log_problem_type_id_fkey" implied="false" onDeleteCascade="false" table="problems_log"/>
@@ -399,7 +399,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="problems" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="problems" numRows="0" remarks="Records on Problems" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('problems_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="problem_id" foreignKey="problems_log_problem_id_fkey" implied="false" onDeleteCascade="false" table="problems_log"/>
          </column>
@@ -432,7 +432,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="problems_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="problems_log" numRows="0" remarks="Logging in problem resolution workflow" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('problems_log_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
          <column autoUpdated="false" digits="0" id="1" name="problem_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="problems_log_problem_id_fkey" implied="false" onDeleteCascade="false" table="problems"/>
@@ -468,7 +468,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="service_status" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="service_status" numRows="4" remarks="Reference on service status: created/active/blocked/closed" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('service_status_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="service_status_id" foreignKey="services_service_status_id_fkey" implied="false" onDeleteCascade="false" table="services"/>
             <child column="service_status_id" foreignKey="services_log_service_status_id_fkey" implied="false" onDeleteCascade="false" table="services_log"/>
@@ -483,7 +483,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="service_type" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="service_type" numRows="4" remarks="Reference on category of service with regard whether it is paid" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('service_type_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="service_type_id" foreignKey="accounts_log_service_type_id_fkey" implied="false" onDeleteCascade="false" table="accounts_log"/>
             <child column="service_type_id" foreignKey="services_service_type_id_fkey" implied="false" onDeleteCascade="false" table="services"/>
@@ -501,7 +501,7 @@
             <column ascending="true" name="short_name"/>
          </index>
       </table>
-      <table name="services" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="services" numRows="0" remarks="Records on services" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('services_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="service_id" foreignKey="contracts_service_id_fkey" implied="false" onDeleteCascade="true" table="contracts"/>
             <child column="service_id" foreignKey="contracts_log_service_id_fkey" implied="false" onDeleteCascade="true" table="contracts_log"/>
@@ -527,7 +527,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="services_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="services_log" numRows="0" remarks="Logging of changes on services" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="service_type_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="services_log_service_type_id_fkey" implied="false" onDeleteCascade="false" table="service_type"/>
@@ -550,7 +550,7 @@
             <column ascending="true" name="date_change"/>
          </index>
       </table>
-      <table name="services_tariff" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="services_tariff" numRows="0" remarks="Tariff of services" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('services_tariff_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
             <child column="services_tariff_id" foreignKey="services_tariff_log_services_tariff_id_fkey" implied="false" onDeleteCascade="true" table="services_tariff_log"/>
          </column>
@@ -570,7 +570,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="services_tariff_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="services_tariff_log" numRows="0" remarks="Logging of changes on services tariff" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="services_tariff_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="services_tariff_log_services_tariff_id_fkey" implied="false" onDeleteCascade="true" table="services_tariff"/>

@@ -1,0 +1,15 @@
+-- run as postgres
+--
+DROP ROLE IF EXISTS avox_dba, avox, avox_www;
+
+CREATE ROLE avox_dba WITH LOGIN PASSWORD 'md55a72194a1b4602b24b2be0aecb9949c6'; -- K6_6<7.)Y(-xohYy
+CREATE ROLE avox WITH LOGIN PASSWORD 'md56796b3e7e6487f9de6f2cda99a2e78e4'; -- 'X&%<+-6/#[Q~TC;w'
+CREATE ROLE avox_www WITH LOGIN PASSWORD 'md53be464564c776beed3d03ba5540316fb'; -- Q61<jAf7LQj92DMf
+
+DROP DATABASE IF EXISTS avox;
+CREATE DATABASE avox WITH
+  OWNER = avox_dba
+  TEMPLATE = template0
+  ENCODING = 'UTF8'
+  LC_COLLATE = 'C'
+  LC_CTYPE = 'C';
